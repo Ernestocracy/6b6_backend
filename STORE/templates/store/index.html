@@ -7,7 +7,14 @@
     <title>KONGA| Home Page</title>
     <link rel="stylesheet" href="{% static 'store/main.css' %}">
 </head>
-<body>
+<body style="background-color: maroon; background-image: -webkit-gradient();">
     <h1 style="color: red">Welcome To The Home Page</h1>
+<div>
+    {% for product in all_products %}
+    <h2> <a href="{% url 'detail' product.id %}">{{ product.name }}</a></h2> <h3>{{ product.price }}</h3>
+    <img src="{{ product.image.url }}" alt={{product.name}} alt="" >
+    <br>
+    {% endfor %}
+</div>
 </body>
 </html>

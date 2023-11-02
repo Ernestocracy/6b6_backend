@@ -18,11 +18,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from STORE.views import homepage
+from STORE.views import homepage, detailpage
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("", homepage)
+    path("", homepage),
+    path("<int:input_id>/",detailpage, name="detail",)
 ]
 
 if settings.DEBUG:
